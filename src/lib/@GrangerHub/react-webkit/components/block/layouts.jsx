@@ -1,6 +1,5 @@
 import 'normalize.css/normalize.css';
 import 'augmented-ui/data-augmented.css';
-import 'grd/grd.css';
 import {textblock} from '../../main.module.scss';
 import style from './block.module.scss';
 import clsx from 'clsx';
