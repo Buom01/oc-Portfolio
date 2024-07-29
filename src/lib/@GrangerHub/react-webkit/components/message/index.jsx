@@ -1,3 +1,4 @@
+import 'augmented-ui/data-augmented.css';
 import style from './message.module.scss';
 
 

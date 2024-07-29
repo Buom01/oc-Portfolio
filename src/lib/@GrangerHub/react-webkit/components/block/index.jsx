@@ -49,7 +49,7 @@ const Human = (props) => {
 
 const ListItem = ({action, children, augmented, active, disabled}) => (
 	<li className={clsx(active && style.active, disabled && style.disabled)}>
-		<span onclick={(!disabled && action) ?? action} tabindex="0" data-augmented-ui={augmented}>
+		<span onclick={(!disabled && action) ?? action} tabIndex="0" data-augmented-ui={augmented}>
 			{children}
 		</span>
 	</li>
