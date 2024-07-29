@@ -8,9 +8,10 @@ const Title = ({children, level = 2, className = null, ...props}) =>
   return (<TitleLevel className={clsx(style.title, className)} {...props}>{children}</TitleLevel>)
 }
 
-const Link = ({children, href = children, Component = "a", className = null, action = false, ...props}) => (
+const Link = ({children, href = children, inner = false, action = inner, Component = "a", className = null, ...props}) => (
   <Component
-      href={href} target="_blank" rel="noopener"
+      href={href}
+      target={!inner && "_blank"} rel={!inner && "noopener"}
       className={clsx(action ? style.action : style.link, className)}
       {...props}
     >
@@ -18,8 +19,15 @@ const Link = ({children, href = children, Component = "a", className = null, act
   </Component>
 );
 
+const Container = ({children, className = null, ...props}) =>
+(
+  <div className={clsx(style.container, className)} {...props}>
+    {children}
+  </div>
+)
+
 const NoBreak = ({children}) => (
   <span className={style.nobreak}>{children}</span>
 )
 
-export { Title, Link, NoBreak };
+export { Title, Link, Container, NoBreak };
