@@ -1,8 +1,17 @@
+import clsx from "clsx";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
+import { Audiowide, Electrolize, Orbitron, Rajdhani, Teko } from "next/font/google";
+import {ghKit} from "@/lib/@GrangerHub/react-webkit/main.module.scss";
 
-const inter = Inter({ subsets: ["latin"] });
+const audiowide = Audiowide({weight: '400', subsets: ['latin'], variable: '--font-audiowide'});
+const electrolize = Electrolize({weight: '400', subsets: ['latin'], variable: '--font-electrolize'});
+const orbitron = Orbitron({weight: '700', subsets: ['latin'], variable: '--font-orbitron'});
+const rajdhani = Rajdhani({weight: '500', subsets: ['latin'], variable: '--font-rajdhani'});
+const teko = Teko({weight: ['300', '400'], subsets: ['latin'], variable: '--font-teko'});
+
+const fontsVariablesClasses =
+  [audiowide, electrolize, orbitron, rajdhani, teko]
+    .map((font) => font.variable);
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr">
-      <body className={inter.className}>{children}</body>
+      <body className={clsx(ghKit, fontsVariablesClasses)}>{children}</body>
     </html>
   );
 }

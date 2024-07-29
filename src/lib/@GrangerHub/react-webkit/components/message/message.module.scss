@@ -1,0 +1,46 @@
+@use 'sass:color';
+
+@mixin message($color: rgb(100%, 100%, 100%))
+{
+  position: relative;
+  padding: 1.4em 0.4em 0.4em 0.4em;
+  color: $color;
+  --aug-border: 0.1em;
+  --aug-border-bg: #{$color};
+  --aug-border-opacity: 0.85;
+  --aug-inset-opacity: 0.85;
+  --aug-tr-width: calc(100% - 8em);
+  --aug-tl: 0.8em;
+  --aug-tr: 0.8em;
+  --aug-br: 0.8em;
+  & > span
+  {
+    position: absolute;
+    width: 8em;
+    top: 0.1em;
+    left: 0.4em;
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-color: color.change($color, $alpha: 0.5);
+  }
+}
+
+.base
+{
+  @include message(white);
+}
+
+.information
+{
+  @include message(rgb(40%, 70%, 100%));
+}
+
+.warning
+{
+  @include message(rgb(100%, 75%, 0%));
+}
+
+.error
+{
+  @include message(rgb(100%, 25%, 25%));
+}

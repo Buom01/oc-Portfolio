@@ -1,0 +1,66 @@
+@import "../../main.module.scss";
+
+
+.title
+{
+
+    @at-root h1#{&}, h2#{&}, h3#{&}, h4#{&}, h5#{&}, h6#{&}
+    {
+        @include bigfont;
+        text-align: center;
+    }
+
+    @at-root h1#{&}
+    {
+        @include neon;
+        margin-top: 0.25em;
+        margin-bottom: 0.45em;
+    }
+  
+    @at-root h2#{&}, h3#{&}, h4#{&}
+    {
+      margin-top: 0.2em;
+      margin-bottom: 0.35em;
+      display: flex;
+      align-items: center;
+      &:before, &:after {
+        content: "";
+        flex: 1;
+        margin: 0px 10px;
+        border-bottom: 3px dashed white;
+      }
+    }
+
+    @at-root h2#{&}
+    {
+        @include shadow_more;
+    }
+
+    @at-root h3#{&}, h4#{&}
+    {
+        @include shadow;
+    }
+}
+
+
+
+
+.link, .action
+{
+    outline: none;
+}
+
+.link:hover, .link:focus
+{
+    @include neon;
+}
+
+.action:hover, .action:focus
+{
+    color: rgba(100%, 75%, 0%, 1)
+}
+
+.nobreak
+{
+    white-space: nowrap;
+}

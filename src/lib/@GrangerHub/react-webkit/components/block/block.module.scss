@@ -1,0 +1,193 @@
+$WINDOW_OPACITY: 0.72;
+$WINDOW_BORDER_OPACITY: 0.36;
+
+.simple
+{
+  display: flex;
+  flex-direction: column;
+}
+
+.pannel
+{
+  display: grid;
+  gap: 0.4em;
+  
+  grid-template-columns: 1fr 2fr;
+}
+
+.generic, .alien, .human
+{
+  --corner: 10px;
+  vertical-align: top;
+  padding: 0.4em;
+  text-align: left;
+  --aug-border: 0.06666666666em;
+  --aug-inset: 0px;
+  --aug-tl: var(--corner);
+  --aug-tr: var(--corner);
+  --aug-bl: var(--corner);
+  --aug-br: var(--corner);
+}
+
+.generic_sub, .alien_sub, .human_sub
+{
+  flex-grow : 1;
+  overflow: hidden;
+}
+
+.generic_list, .alien_list, .human_list
+{
+  overflow: hidden;
+  padding: 0.06666666666em;
+  & > ul
+  {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    & > li {
+      margin: 0;
+      padding: 0;
+      white-space: nowrap;
+      & > *
+      {
+        display: block;
+        margin: 0;
+        padding: 0.1em 0.35em;
+        cursor: pointer;
+        --aug-border: 0px;
+        --aug-inset: 0px;
+        --aug-inset-bg: rgb(10%, 10%, 10%);
+        --aug-inset-opacity: 0;
+        &:focus, &:hover
+        {
+          --aug-inset-opacity: calc(0.5 * 0.55);
+          & a
+          {
+            color: inherit;
+          }
+        }
+      }
+      &.active > *
+      {
+        --aug-inset-opacity: 0.5;
+      }
+    }
+  }
+}
+
+.generic_list > ul > li
+{
+  &.active
+  {
+    color: rgba(100%, 75%, 0%, 1);
+  }
+}
+.alien_list > ul > li
+{
+  &.active
+  {
+    color: rgba(100%, 25%, 25%, 1);
+  }
+}
+.human_list > ul > li
+{
+  &.active
+  {
+    color: rgba(40%, 70%, 100%, 1);
+  }
+}
+
+.disabled
+{
+  color: rgb(0.502 * 255, 0.502 * 255, 0.502 * 255) !important;
+  & *
+  {
+    color: rgb(0.502 * 255, 0.502 * 255, 0.502 * 255) !important;
+  }
+}
+
+.actions
+{
+  padding-top: 0.4em;
+  white-space: nowrap;
+  text-align: right;
+  direction: rtl;
+  & a
+  {
+    cursor: pointer;
+    padding: 0 0.4em;
+    text-decoration: none;
+  }
+}
+
+.generic
+{
+  --aug-inset-bg: rgba(0, 0, 0, #{$WINDOW_OPACITY});
+  --aug-border-bg: rgba(50%, 50%, 50%, #{$WINDOW_BORDER_OPACITY});
+
+  & a:focus, & a:hover
+  {
+    color: rgba(100%, 75%, 0%, 1);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-electrolize), 'Electrolize', sans-serif;
+    line-height: 1.34em;
+  }
+}
+
+.alien
+{
+  --aug-inset-bg: rgba(5%, 0%, 0%, #{$WINDOW_OPACITY});
+  --aug-border-bg: rgba(60%, 50%, 50%, #{$WINDOW_BORDER_OPACITY});
+
+  & a:focus, & a:hover
+  {
+    color: rgba(100%, 25%, 25%, 1);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-audiowide), 'Audiowide', sans-serif;
+    line-height: 1.34em;
+  }
+}
+
+.human
+{
+  --aug-inset-bg: rgba(0%, 2.5%, 5%, #{$WINDOW_OPACITY});
+  --aug-border-bg: rgba(50%, 55%, 60%, #{$WINDOW_BORDER_OPACITY});
+
+  & a:focus, & a:hover
+  {
+    color: rgba(40%, 70%, 100%, 1);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-orbitron), 'Orbitron', sans-serif;
+    font-weight: 700;
+    line-height: 1.34em;
+  }
+}
+
+.generic_sub
+{
+  --aug-inset-bg: rgba(0, 0, 0, #{$WINDOW_OPACITY});
+  --aug-border-bg: rgba(50%, 50%, 50%, #{$WINDOW_BORDER_OPACITY});
+}
+
+.alien_sub
+{
+  --aug-inset-bg: rgba(10%, 0%, 0%, #{$WINDOW_OPACITY});
+  --aug-border-bg: rgba(60%, 45%, 45%, #{$WINDOW_BORDER_OPACITY});
+}
+
+.human_sub
+{
+  --aug-inset-bg: rgba(0%, 5%, 10%, #{$WINDOW_OPACITY});
+  --aug-border-bg: rgba(45%, 52.5%, 60%, #{$WINDOW_BORDER_OPACITY});
+}
+
+.big
+{
+  font-size: 42px;
+}
