@@ -1,0 +1,26 @@
+.base
+{
+  width: 25%;
+  --aug-tl: 0.8em;
+  --aug-tr: 0.8em;
+  --aug-br: 0.8em;
+  --aug-bl: 0.8em;
+}
+
+.center
+{
+  display: block;
+  margin: 0 auto;
+}
+.left
+{
+  float: left;
+  --aug-tl: 0.3em;
+  --aug-br: 0.3em;
+}
+.right
+{
+  float: right;
+  --aug-tr: 0.3em;
+  --aug-bl: 0.3em;
+}
