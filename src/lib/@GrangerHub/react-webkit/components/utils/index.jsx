@@ -11,7 +11,7 @@ const Title = ({children, level = 2, className = null, ...props}) =>
 const Link = ({children, href = children, inner = false, action = inner, Component = "a", className = null, ...props}) => (
   <Component
       href={href}
-      target={!inner && "_blank"} rel={!inner && "noopener"}
+      target={!inner ? "_blank" : undefined} rel={!inner ? "noopener" : undefined}
       className={clsx(action ? style.action : style.link, className)}
       {...props}
     >
