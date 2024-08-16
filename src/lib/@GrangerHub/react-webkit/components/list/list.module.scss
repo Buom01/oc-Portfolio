@@ -1,0 +1,48 @@
+.grid
+{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25em;
+}
+.container
+{
+  display: inline-block;
+  width: calc(325px - 0.5em);
+  max-width: 100%;
+  flex-grow: 1;
+}
+
+.list
+{
+  list-style-position: outside;
+}
+.item
+{
+}
+
+.genericList
+{
+  list-style-type: circle;
+}
+.genericItem::marker
+{
+  color: rgba(100%, 75%, 0%, 1);
+}
+
+.humainList
+{
+  list-style-type: square;
+}
+.humainItem::marker
+{
+  color: rgba(40%, 70%, 100%, 1);
+}
+
+.alienList
+{
+  list-style-type: disc;
+}
+.alienItem::marker
+{
+  color: rgba(100%, 25%, 25%, 1);
+}
