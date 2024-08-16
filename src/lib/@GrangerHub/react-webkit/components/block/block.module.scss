@@ -3,7 +3,6 @@ $WINDOW_BORDER_OPACITY: 0.36;
 
 .simple
 {
-  display: flex;
   flex-direction: column;
 }
 
@@ -18,19 +17,23 @@ $WINDOW_BORDER_OPACITY: 0.36;
 .generic, .alien, .human
 {
   --corner: 10px;
+  --padding: 0.4em;
+  --sub-corner: calc(var(--corner) - (var(--padding) / 2));
+  --current-corner: var(--corner);
+  padding: var(--padding);
   vertical-align: top;
-  padding: 0.4em;
   text-align: left;
   --aug-border: 0.06666666666em;
   --aug-inset: 0px;
-  --aug-tl: var(--corner);
-  --aug-tr: var(--corner);
-  --aug-bl: var(--corner);
-  --aug-br: var(--corner);
+  --aug-tl: var(--current-corner);
+  --aug-tr: var(--current-corner);
+  --aug-bl: var(--current-corner);
+  --aug-br: var(--current-corner);
 }
 
 .generic_sub, .alien_sub, .human_sub
 {
+  --current-corner: var(--sub-corner);
   flex-grow : 1;
   overflow: hidden;
 }
