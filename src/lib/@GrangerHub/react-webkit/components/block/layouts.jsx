@@ -14,9 +14,9 @@ const Basic = ({Component = Generic, children, width = 600, height = 400, big = 
   </Component>
 );
 
-const Simple = ({Component = Generic, title, children, width = 600, height = 400, big = false, className = null}) => (
+const Simple = ({Component = Generic, title, TitleComponent = "h3", children, width = 600, height = 400, big = false, className = null}) => (
   <Component width={width} height={height} big={big} className={className}>
-    <h3>{title}</h3>
+    <TitleComponent>{title}</TitleComponent>
     <Component sub basic augmented={Component == Human ? "bl-clip br-clip exe" : "bl-round br-round exe"} className={textblock}>
       {children}
     </Component>

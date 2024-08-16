@@ -4,7 +4,7 @@ import clsx from 'clsx';
 
 const Picture = (
   {
-    Component = "img", className = undefined,
+    Component = 'img', className = undefined,
     center = false, left = false, right = !center && !left,
     ...props
   }
