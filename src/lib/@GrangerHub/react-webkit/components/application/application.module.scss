@@ -1,0 +1,43 @@
+.containter
+{
+  display: flex;
+  gap: 1.5em;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75em;
+  flex-wrap: wrap;
+}
+
+.bright
+{
+  filter: saturate(100%) brightness(100%);
+  transition: 150ms filter linear;
+}
+.base, .layer
+{
+  display: inline-block;
+  height: 3em;
+  width: 3em;
+}
+.base
+{
+  opacity: 0.5;
+  --aug-tl: 0.15em;
+  --aug-tr: 0.75em;
+  --aug-br: 0.15em;
+  --aug-bl: 0.35em;
+  overflow: hidden;
+  transition: 150ms opacity linear;
+  mask-repeat: no-repeat;
+  mask-size: cover, 90%;
+  mask-composite: exclude;
+  mask-position: 50% 50%;
+}
+.base:hover, .base:focus
+{
+  opacity: 0.8;
+}
+.bright:has(.base:hover), .bright:has(.base:focus)
+{
+  filter: saturate(175%) brightness(225%);
+}
