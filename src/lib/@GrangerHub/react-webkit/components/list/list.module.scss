@@ -14,13 +14,16 @@
 
 .list
 {
-  list-style-position: outside;
 }
 .item
 {
+  list-style-position: outside;
 }
 
 .genericList
+{
+}
+.genericItem
 {
   list-style-type: circle;
 }
@@ -31,6 +34,9 @@
 
 .humainList
 {
+}
+.humainItem
+{
   list-style-type: square;
 }
 .humainItem::marker
@@ -39,6 +45,9 @@
 }
 
 .alienList
+{
+}
+.alienItem
 {
   list-style-type: disc;
 }
