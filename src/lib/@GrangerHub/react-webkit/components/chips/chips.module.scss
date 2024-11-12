@@ -1,0 +1,73 @@
+@import "../../main.module.scss";
+
+
+.chips
+{
+  margin: 4px;
+  display: flex;
+  gap: 10px;
+  max-width: 100%;
+  flex-wrap: wrap;
+}
+
+@mixin chip($color: white)
+{
+  @include chat;
+  font-size: 0.8em;
+  white-space: nowrap;
+
+  padding: 0.2em 0.4em;
+  color: $color;
+  --aug-border: 0.08em;
+  --aug-border-bg: #{$color};
+  --aug-border-opacity: 0.85;
+  --aug-inset-opacity: 0.85;
+  --aug-tl: 0.4em;
+  --aug-tr: 0.3em;
+  --aug-br: 0.4em;
+}
+
+.chipRed
+{
+  @include chip(#ff6666);
+}
+
+.chipOrange
+{
+  @include chip(#ffa166);
+}
+
+.chipYellow
+{
+  @include chip(#ffe366);
+}
+
+.chipGreen
+{
+  @include chip(#80ff66);
+}
+
+.chipCyan
+{
+  @include chip(#66b3ff);
+}
+
+.chipBlue
+{
+  @include chip(#6687ff);
+}
+
+.chipViolet
+{
+  @include chip(#9166ff);
+}
+
+.chipMagenta
+{
+  @include chip(#c266ff);
+}
+
+.chip
+{
+  @include chip();
+}
