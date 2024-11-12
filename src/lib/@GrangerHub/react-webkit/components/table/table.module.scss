@@ -1,0 +1,122 @@
+$border: 2px solid rgba(255,255,255,0.75);
+$light-border: 1px solid rgba(255,255,255,0.75);
+$spoiler-background: rgba(63,63,63,0.25);
+$row-selected-backgound: rgba(0,255,193,0.2);
+$row-hover-backgound: rgba(0,255,193,0.1);
+
+.tableContainer
+{
+  overflow-x: auto;
+}
+.table
+{
+  position: relative;
+  // display: table;
+  border-collapse: collapse;
+  width: 100%;
+}
+.tableRow
+{
+  &:hover
+  {
+    background-color: $row-hover-backgound;
+  }
+  &.selected
+  {
+    background-color: $row-selected-backgound;
+  }
+}
+.tableRow, .spoiler
+{
+  // display: table-row;
+}
+.tableRow:first-child
+{
+  border-top: $border;
+}
+.tableRow
+{
+  border-left: $border;
+  border-right: $border;
+}
+.tableRow:last-child, .tableRow:has( + .spoiler:last-child):not(:has( > .spoilerOpen))
+{
+  border-bottom: $border;
+}
+.tableCell, .spoilerIndicator
+{
+  // display: table-cell;
+  box-sizing: border-box;
+}
+.spoilerIndicator
+{
+  vertical-align: center;
+  text-align: center;
+  &.hasSpoiler
+  {
+    width: 1em;
+  }
+}
+.spoilerIndicator.hasSpoiler::before
+{
+  content: "\25BA";
+  display: inline-block;
+  transition: 250ms transform ease-in-out;
+}
+.spoilerIndicator.hasSpoiler.spoilerOpen::before
+{
+  transform: rotate(90deg);
+}
+.tableHead
+{
+  // display: table-header-group;
+}
+.tableBody
+{
+  // display: table-row-group;
+}
+.tableFoot
+{
+  // display: table-footer-group;
+}
+
+.tableCell
+{
+  border-left: $border;
+  border-right: $border;
+  padding: 0.05em 0.25em;
+}
+.spoilerIndicator + .tableCell
+{
+  border-left: none;
+}
+.tableCell:last-child
+{
+  border-right: none;
+}
+.tableHead:after, .tableBody:has( + .tableFoot)::after
+{
+  content: "";
+  display: block;
+  height: 0.5em;
+}
+
+.spoiler
+{
+  // display: table-row;
+  background-color: $spoiler-background;
+}
+.spoiler .spoilerCell
+{
+  // display: table-cell;
+  padding: 0.25em;
+  padding-bottom: 0.5em;
+  border-top: $light-border;
+  border-bottom: $light-border;
+  border-left: $border;
+  border-right: $border;
+}
+.spoiler:not(.spoilerOpen) .spoilerCell
+{
+  display: none;
+}
