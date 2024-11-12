@@ -67,7 +67,7 @@
 	-moz-osx-font-smoothing: grayscale;
 
 
-	padding: 56px 20px;
+  padding: 1.8em 0.6em;
 	scroll-behavior: smooth;
   
   & *
@@ -89,6 +89,15 @@
   {
     margin-top: 0.2em;
     margin-bottom: 0.35em;
+    list-style-type: '—   ';
+    & li > ul
+    {
+      list-style-type: '-  ';
+      & li > ul
+      {
+        list-style-type: '· ';
+      }
+    }
   }
 
   p
@@ -192,5 +201,14 @@
   .grey
   {
     color: rgb(0.502 * 255, 0.502 * 255, 0.502 * 255) !important;
+  }
+}
+
+
+@media (max-width: 700px)
+{
+  .ghKit
+  {
+    font-size: 22px;
   }
 }
