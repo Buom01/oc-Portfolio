@@ -17,14 +17,14 @@ export const Row = ({children, spoiler = undefined, full = false}: {children: an
           Children.map(
             children,
             (child, index) => (
-              <td className={classes.tableCell} colspan={full ? 100 : undefined}>{child}</td>
+              <td className={classes.tableCell} colSpan={full ? 100 : undefined}>{child}</td>
             )
           )
         }
       </tr>
       {!!spoiler && 
         <tr className={clsx(classes.spoiler, open && classes.spoilerOpen)}>
-          <td colspan="100" className={classes.spoilerCell}>
+          <td colSpan={100} className={classes.spoilerCell}>
             {spoiler}
           </td>
         </tr>

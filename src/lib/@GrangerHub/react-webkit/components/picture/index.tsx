@@ -1,3 +1,4 @@
+import type {ElementType} from 'react';
 import style from './picture.module.scss';
 import clsx from 'clsx';
 
@@ -6,7 +7,17 @@ const Picture = (
   {
     Component = 'img', className = undefined,
     center = false, left = false, right = !center && !left,
+    blurWidth, blurHeight,
     ...props
+  }
+  :
+  {
+    Component?: ElementType,
+    className?: string,
+    center?: boolean,
+    left?: boolean,
+    right?: boolean,
+    [key: string]: any
   }
 ) => (
   <Component
