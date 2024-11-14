@@ -13,7 +13,7 @@ import Image from 'next/image';
 
 import classes from './page.module.css';
 
-import picture from './assets/bastien-adam.png';
+import picture from './assets/bastien-adam.min.jpg';
 import { mdiGmail, mdiGithub, mdiLinkedin, mdiPhone } from '@mdi/js';
 import malt from './assets/malt.svg'
 
