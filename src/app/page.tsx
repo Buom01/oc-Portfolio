@@ -294,7 +294,6 @@ export default function Home() {
           </p>
           <ul>
             <li>L&apos;API d&apos;architecture en middleware</li>
-            <li>L&apos;API d&apos;architecture en middleware</li>
             <li>Une grande partie de la logique principale définie par la configuration</li>
             <li>Les middlewares de parsing des requêtes HTTP</li>
             <li>Les middlewares de réponses HTTP</li>
